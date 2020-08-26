@@ -2,7 +2,7 @@
 
 .homepage {
   width: 100%;
-  background-color: $secondary-color;
+  background-color: $middle-color;
 
   &__title {
     width: 100%;
@@ -27,5 +27,25 @@
     h2 {
       font-size: 2em;
     }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+
+    div {
+      margin: 0 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    label {
+      margin: 0.5em 0;
+    }
+  }
+  &__submit {
+    margin: 2em 0;
+    align-self: center;
   }
 }
