@@ -3,6 +3,7 @@ import "./_homepage.scss";
 import React from "react";
 
 export const Homepage = (props) => {
+  const { factors, names } = props;
   const data = [];
 
   const handleForm = (e) => {
@@ -12,6 +13,28 @@ export const Homepage = (props) => {
       data.push(+e.target[`st${i}`].value);
     }
     console.log(data);
+    console.log(factors);
+    console.log(names);
+
+    const roles = [];
+    // Dla każdej roli
+    for (let i = 0; i < 21; i++) {
+      let sum = 0;
+      let counter = 0;
+      // Dla każdego atrubutu
+      for (let j = 0; j < 36; j++) {
+        if (factors[i][j] === 2) {
+          counter += 2;
+          sum += 2 * data[j];
+        } else if (factors[i][j] === 1) {
+          counter += 1;
+          sum += data[j];
+        }
+      }
+      if (counter !== 0) roles.push({ name: names[i], average: sum / counter });
+      else roles.push({ name: names[i], average: 0 });
+    }
+    console.log(roles);
   };
 
   return (
