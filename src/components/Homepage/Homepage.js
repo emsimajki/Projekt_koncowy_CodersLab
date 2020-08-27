@@ -1,9 +1,12 @@
 import "../../scss/_generic.scss";
 import "./_homepage.scss";
-import React from "react";
+import React, { useState } from "react";
+import { Summary } from "../Summary/Summary";
 
 export const Homepage = (props) => {
   const { factors, names } = props;
+  const [surveyLoaded, setSurveyLoaded] = useState(false);
+  const [roles, setRoles] = useState([]);
   const data = [];
 
   const handleForm = (e) => {
@@ -16,7 +19,7 @@ export const Homepage = (props) => {
     console.log(factors);
     console.log(names);
 
-    const roles = [];
+    const tempRoles = [];
     // Dla każdej roli
     for (let i = 0; i < 21; i++) {
       let sum = 0;
@@ -31,10 +34,16 @@ export const Homepage = (props) => {
           sum += data[j];
         }
       }
-      if (counter !== 0) roles.push({ name: names[i], average: sum / counter });
-      else roles.push({ name: names[i], average: 0 });
+      if (counter !== 0)
+        tempRoles.push({
+          name: names[i],
+          average: sum / counter,
+        });
+      else tempRoles.push({ name: names[i], average: 0 });
     }
-    console.log(roles);
+    console.log(tempRoles);
+    setRoles(tempRoles);
+    setSurveyLoaded(true);
   };
 
   return (
@@ -202,6 +211,9 @@ export const Homepage = (props) => {
               />
             </div>
           </form>
+        </article>
+        <article className="homepage__summary">
+          {surveyLoaded && <Summary roles={roles} />}
         </article>
       </section>
     </>

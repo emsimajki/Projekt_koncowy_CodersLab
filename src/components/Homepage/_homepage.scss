@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3em;
     color: white;
     background-color: $primary-color;
 
@@ -26,6 +25,7 @@
 
     h2 {
       font-size: 2em;
+      margin-bottom: 1em;
     }
   }
 
