@@ -4,20 +4,25 @@ import React, { useState } from "react";
 import { Summary } from "../Summary/Summary";
 
 export const Homepage = (props) => {
-  const { factors, names } = props;
+  const {
+    factors,
+    names,
+    factorsNames,
+    friendsNames,
+    moviesLinks,
+    descriptions,
+  } = props;
   const [surveyLoaded, setSurveyLoaded] = useState(false);
   const [roles, setRoles] = useState([]);
   const data = [];
 
   const handleForm = (e) => {
     e.preventDefault();
-    console.log(e.target);
+
+    // Zczytywanie danych z ankiet
     for (let i = 0; i < 36; i++) {
       data.push(+e.target[`st${i}`].value);
     }
-    console.log(data);
-    console.log(factors);
-    console.log(names);
 
     const tempRoles = [];
     // Dla każdej roli
@@ -36,12 +41,13 @@ export const Homepage = (props) => {
       }
       if (counter !== 0)
         tempRoles.push({
+          id: i,
           name: names[i],
           average: sum / counter,
         });
-      else tempRoles.push({ name: names[i], average: 0 });
+      else tempRoles.push({ id: i, name: names[i], average: 0 });
     }
-    console.log(tempRoles);
+
     setRoles(tempRoles);
     setSurveyLoaded(true);
   };
@@ -213,7 +219,16 @@ export const Homepage = (props) => {
           </form>
         </article>
         <article className="homepage__summary">
-          {surveyLoaded && <Summary roles={roles} />}
+          {surveyLoaded && (
+            <Summary
+              roles={roles}
+              factors={factors}
+              factorsNames={factorsNames}
+              friendsNames={friendsNames}
+              moviesLinks={moviesLinks}
+              descriptions={descriptions}
+            />
+          )}
         </article>
       </section>
     </>

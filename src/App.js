@@ -803,6 +803,44 @@ const factors = [
     2,
   ],
 ];
+const factorsNames = [
+  "Długie wrzuty",
+  "Dośrodkowania",
+  "Drybling",
+  "Gra głową",
+  "Krycie",
+  "Odbiór piłki",
+  "Podania",
+  "Przyjęcie piłki",
+  "Rzuty karne",
+  "Rzuty rożne",
+  "Rzuty wolne",
+  "Strzały z dystansu",
+  "Technika",
+  "Wykańczanie akcji",
+  "Agresja",
+  "Błyskotliwość",
+  "Decyzje",
+  "Determinacja",
+  "Gra bez piłki",
+  "Koncetracja",
+  "Opanowanie",
+  "Pracowitość",
+  "Przegląd sytuacji",
+  "Przewidywanie",
+  "Przywództwo",
+  "Ustawianie się",
+  "Waleczność",
+  "Współprca",
+  "Przyspieszenie",
+  "Równowaga",
+  "Siła",
+  "Skoczność",
+  "Sprawność",
+  "Szybkość",
+  "Wytrzymałość",
+  "Zwinność",
+];
 const names = [
   "Cofnięty rozgrywający",
   "Pomocnik odbierający piłkę",
@@ -826,11 +864,87 @@ const names = [
   "Środkowy pomocnik",
   "Wysunięty rozgrywający",
 ];
+const friendsNames = [
+  "Kompletny boczny wysunięty obrońca, Wysunięty rozgrywający",
+  "Boczny obrońca, Pomocnik długodystansowiec",
+  "Boczny obrońca, Pomocnik długodystansowiec",
+  "Schodzący napastnik, Pomocnik długodystansowiec",
+  "Schodzący napastnik, Wysunięty rozgrywający",
+  "Klasyczna 10, Skrzydłowy",
+  "Środkowy obrońca, Pomocnik odbierający piłkę",
+  "Obrońca grający piłką, Cofnięty rozgrywający",
+  "Tradycyjny środkowy obrońca, Rygiel defensywy",
+  "Cofnięty rozgrywający, Kompletny boczny wysunięty obrońca",
+  "Pomocnik odbierający piłkę, Boczny obrońca",
+  "Tradycyjny boczny obrońca, Rygiel defensywy",
+  "Wysunięty napastnik, Środkowy Pomocnik",
+  "Fałszywa 9, Kompletny boczny wysunięty obrońca",
+  "Kompletny napastnik, Boczny obrońca",
+  "Wysunięty napastnik, Schodzący napastnik",
+  "Wysunięty napastnik, Skrzydłowy",
+  "Kompletny napastnik, Pomocnik odbierający piłkę",
+  "Kompletny boczny wysunięty obrońca, Fałszywa 9",
+  "Boczny pomocnik, Ofensywny pomocnik",
+  "Cofnięty rozgrywający, Fałszywy napastnik",
+];
+const moviesLinks = [
+  "https://www.youtube.com/embed/GhgZXBoesX8",
+  "https://www.youtube.com/embed/9Ybd6Xemx0c",
+  "https://www.youtube.com/embed/srB36hw-L4E",
+  "https://www.youtube.com/embed/erz5dB2IPbo",
+  "https://www.youtube.com/embed/RMQdjlUx5sM",
+  "https://www.youtube.com/embed/ZmbwUWveffU",
+  "https://www.youtube.com/embed/v_58jAG69ls",
+  "https://www.youtube.com/embed/RukTQXqJRdw",
+  "https://www.youtube.com/embed/AqIl5vTLiTE",
+  "https://www.youtube.com/embed/m1YCLhRevos",
+  "https://www.youtube.com/embed/IkOWWXAK7Cg",
+  "https://www.youtube.com/embed/sMC9c-l3vs8",
+  "https://www.youtube.com/embed/XJYNSuRyjIs",
+  "https://www.youtube.com/embed/UGPieH0O-PY",
+  "https://www.youtube.com/embed/eKhOEO0xi7w",
+  "https://www.youtube.com/embed/Vi53_jiRIks",
+  "https://www.youtube.com/embed/JLVBc_J43V8",
+  "https://www.youtube.com/embed/0RjdeDK6JV8",
+  "https://www.youtube.com/embed/Fdfap3l0uCI",
+  "https://www.youtube.com/embed/4r5cvwygwXc",
+  "https://www.youtube.com/embed/s-exVbMRW3o",
+];
+const descriptions = [
+  "Cofnięty rozgrywający operuje między linią obrony a ataku, zaś jego zadaniem jest rozpoczynanie akcji ofensywnych precyzyjnymi podaniami do zawodników przednich formacji. Choć jest w pierwszym rzędzie kreatywnym zawodnikiem, cofnięty rozgrywający musi również grać skutecznie w obronie.  Będzie wyprowadzać piłkę z linii obrony i rozgrywać ją szerzej na boki.",
+  "Grając na środku drugiej linii, pomocnik odbierający piłkę ma za zadanie ograniczać swobodę ofensywnych graczy przeciwnika i odbierać im piłkę. Powinien też posiadać umiejętności techniczne pozwalające mu utrzymywać się przy piłce i stwarzać sytuacje podbramkowe bardziej ofensywnym partnerom. Pomocnik odbierający piłkę będzie się starał odbierać piłkę w środku pola i odgrywać ją do bardziej kreatywnych partnerów.",
+  "Głównym obowiązkiem rygla defensywy jest zajmowanie pozycji między pomocą a linią obrony, gdzie ma za zadanie przecinanie podań, odbiór piłki i odgrywanie jej bardziej kreatywnym partnerom z zespołu. Jako że oczekuje się od niego przede wszystkim funkcjonowania jako kotwica bloku defensywnego, musi trzymać się swej pozycji, stroniąc tak od gry pressingiem, jak i od włączania się w akcje ofensywne. Rygiel defensywy może pełnić wyłącznie funkcje defensywne.",
+  "Fałszywa 9 to w pewnym sensie wysunięty ofensywny pomocnik, rozgrywający, niekonwencjonalny samotny napastnik, który cofa się głęboko w stronę drugiej linii. Celem takiego zachowania jest sprawienie problemów środkowym obrońcom przeciwnika, którzy mogę albo podążyć za nim, zostawiając za swoimi plecami przestrzeń dla atakujących pomocników, napastników lub skrzydłowych, albo też zostawić mu miejsce i czas na drybling lub podanie.",
+  "Kompletny napastnik techniką dorównuje cofniętemu napastnikowi, skutecznością lisowi pola karnego, a siłą odgrywającemu. Równie dobrze radzi sobie stwarzając sytuacje partnerom, samemu sobie, jak i wykorzystując okazje wypracowane przez innych. Taki zawodnik wyrasta ponad instrukcje taktyczne i najlepiej po prostu zostawić mu wolną rękę. Kompletny napastnik będzie grać na szpicy ataku, stwarzając sytuacje podbramkowe sobie i innym.",
+  "Wysunięty napastnik ma za zadanie stanowić grot formacji ofensywnej swojego zespołu. Oczekuje się od niego w pierwszym rzędzie bramek i asyst, powinien więc brać udział w większości akcji ofensywnych.Jego dodatkowym zadaniem jest dochodzenie do piłki po niecelnych zagraniach w uliczkę i wybiciach z głębi pola, a następnie stwarzanie sytuacji podbramkowych.",
+  "Boczny obrońca jest kluczową postacią we współczesnym futbolu, łącząc tradycyjne obowiązki w defensywie z zagraniami na obieg po skrzydle, by wspierać poczynania ofensywne zespołu i stwarzać przewagę liczebną na połowie rywala. Choć jest przede wszystkim graczem defensywnym, musi umieć włączać się do ataku, gdy jego zespół potrzebuje więcej przestrzeni na skrzydłach. Boczny obrońca, pomaga pomocnikom, stwarzając zagrożenie na skrzydle, a gdy nadarzy się ku temu okazja, będzie próbować podań w uliczkę i dośrodkowań.",
+  "Kompletny boczny wysunięty obrońca uwielbia grę ofensywną i choć w razie potrzeby wypełnia swoje obowiązki defensywne, ma naturalną skłonność do gry bliżej bramki przeciwnika, z dala od wyznaczonej mu pozycji. Kompletny boczny wysunięty obrońca będzie się zachowywać nieco odważniej w ofensywie, starając się być aktywnym głównie na połowie przeciwnika.",
+  "Tradycyjny boczny obrońca zdaje sobie sprawę ze swoich braków, więc koncentruje się na grze defensywnej, rzadko kiedy angażując się w ataku. Tradycyjny boczny obrońca pełni wyłącznie funkcje defensywne.",
+  "Obrońca grający piłką ma przede wszystkim uniemożliwiać napastnikom przeciwnika swobodną grę i wybijać piłkę poza strefę zagrożenia. Jednakże w przeciwieństwie do klasycznego środkowego obrońcy ma on wolną rękę w rozpoczynaniu kontrataków rozcinającymi defensywę rywali prostopadłymi podaniami z głębi pola. ",
+  "Środkowy obrońca ma uniemożliwiać napastnikom przeciwnika swobodną grę i wybijać piłkę poza strefę zagrożenia. Jednakże, zwłaszcza gdy zdecydujesz się na bardziej agresywną taktykę, musi również dysponować odpowiednim opanowaniem, by pomagać drużynie w utrzymywaniu się przy piłce i odgrywać ją prostymi podaniami do bardziej kreatywnych partnerów.",
+  "Głównym zadaniem tradycyjnego środkowego obrońcy jest uniemożliwianie napastnikom przeciwnika swobodnej gry i wybijanie piłki poza strefę zagrożenia. Jego celem jest odbiór piłki bez faulu i bezceremonialne wyekspediowanie jej w głąb pola. Tradycyjny środkowy obrońca będzie ustawiać się w linii ze swoim partnerem z defensywy, by rozbijać ataki, kryć napastników rywali i zapobiegać zagraniu piłki w pole karne.",
+  "Boczny pomocnik ma obowiązki tak defensywne, jak i ofensywne, w zależności od potrzeb wspierając obrońców, pomocników lub napastników. Zwykle pozbawiony jest zabójczej szybkości i świetnego dryblingu, jakimi charakteryzuje się klasyczny skrzydłowy, więc aby stwarzać zagrożenie w ataku, nie zapominając zarazem o grze obronnej, musi bazować na swej pracowitości i umiejętności gry zespołowej.",
+  "Zadaniem schodzącego napastnika jest ścinanie z piłką ze skrzydła na środek linii defensywnej przeciwnika, a najlepiej spisuje się on wówczas, gdy lepiej gra nogą przeciwną do flanki, na której jest wystawiony. W ten sposób na skrzydle otwiera się miejsce dla ofensywnego bocznego obrońcy, a obrońca przeciwnika musi sobie radzić z dwoma rywalami, choć nierzadko taka akcja kończy się w ślepym zaułku. Schodzący napastnik, któremu powierzona zostala funkcja gry w ataku. Będzie próbował przedrzeć się przez linię obrony rywali, mając do wyboru podanie, dośrodkowanie albo strzal na bramkę",
+  "Zadaniem skrzydłowego jest wygrywanie pojedynków jeden na jednego z bocznym obrońcą, a w tym celu musi dysponować dobrą techniką i szybkością. Gdy jego zespół jest przy piłce, skrzydłowy operuje przy linii bocznej, czekając na okazję do wyjścia na wolne pole i zejście do linii końcowej.Skrzydłowy, któremu powierzona zostanie funkcja wsparcia ataku, ma za zadanie minięcie rywala i szybkie dośrodkowanie piłki w stronę napastników.",
+  "Fałszywy napastnik funkcjonuje jako jedno z głównych zagrożeń dla bramki przeciwnika. Zazwyczaj gra w parze z drugim napastnikiem, wychodząc agresywnie na pozycję, gdy tylko piłka zbliży się do pola karnego, zaś w obronie stosuje pressing na obrońcach przeciwnika.",
+  "Klasyczna 10 to zawodnik, który możegrać jako ofensywny pomocnik lub środkowy napastnik. Przypomina co prawda wysuniętego rozgrywającego tym, że lubi grać na wolnej przestrzeni między drugą linią a obroną przeciwnika, lecz znacznie mniej angażuje się w defensywie, gdy jego zespól traci piłkę, przez cały czas krążąc po boisku w poszukiwaniu luki w formacji rywala. W związku z tym reszta zespołu musi wykonywać dodatkową pracę w defensywie, lecz za to w ataku może opierać na nim rozegranie akcji ofensywnych.",
+  "W porównaniu ze zwykłym pomocnikiem ofensywny pomocnik gra bardziej wysunięty do przodu, tak więc nie można od niego oczekiwać dynamicznych wejść z głębi pola, charakteryzujących ofensywnie usposobionego środkowego pomocnika. Jego zadaniem jest stwarzanie sytuacji podbramkowych dla siebie i dla partnerów z zespołu, zanim obrońcy odetną ich od podań, tak więc musi się charakteryzować wybitnymi umiejętnościami technicznymi i cechami mentalnymi.",
+  "Pomocnik długodystansowiec dzięki swej dynamicznej grze stanowi ważny element tak defensywy, jak i ofensywy. W ataku wspiera napastników, często wchodząc w ostatniej chwili w pole karne, by zamykać dośrodkowania czy też próbować strzałów z dystansu.",
+  "Środkowy pomocnik jest pracowitym, wszechstronnym łącznikiem między obroną a atakiem. Oczekuje się od niego wykonywania wielu różnorodnych zadań, więc przydają mu się tak umiejętności techniczne, jak i taktyczne, by w razie potrzeby wspierać partnerów w grze defensywnej lub ofensywnej.",
+  "Wysunięty rozgrywający może operować w środku pola, jako ofensywny pomocnik lub łącznik ataku na skrzydle. Jego zadanie polega na zajmowaniu pozycji między linią pomocy, a obrony przeciwnika, by tam czekać na podanie, które pozwoli na płynne przejście z defensywy do ataku. Wysunięty rozgrywając będzie atakować będzie linię defensywną przeciwnika z głębi pola, szukając okazji do podania w uliczkę albo dośrodkowania.",
+];
 
 function App() {
   return (
     <div className="App">
-      <Homepage factors={factors} names={names} />
+      <Homepage
+        factors={factors}
+        names={names}
+        factorsNames={factorsNames}
+        friendsNames={friendsNames}
+        moviesLinks={moviesLinks}
+        descriptions={descriptions}
+      />
     </div>
   );
 }

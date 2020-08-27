@@ -2,9 +2,194 @@
 
 .summary {
   width: 100%;
-  padding-bottom: 2em;
   h2 {
     font-size: 2em;
-    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    color: $primary-color;
+  }
+
+  img {
+    padding: 1em 0;
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    background-color: $middle-color;
+    ul {
+      width: 40em;
+      font-size: 1.1em;
+      padding: 0.5em;
+      border: 3px solid $text-color;
+      border-radius: 1em;
+      background-color: $background-color;
+      li {
+        padding: 0.1em 0;
+        span {
+          font-weight: bold;
+        }
+        span:nth-child(2),
+        span:nth-child(3) {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &__map {
+    padding: 1em 0;
+    background-color: $background-color;
+    div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__main-map {
+    position: relative;
+    cursor: default;
+    h4 {
+      font-size: 2em;
+      padding: 0.5em;
+      color: $primary-color;
+    }
+  }
+
+  &__primary-position {
+    position: absolute;
+    max-width: 50%;
+    top: 20%;
+    left: 10%;
+    background-color: white;
+    border-radius: 1em;
+    border: 3px solid red;
+  }
+
+  &__secondary-position {
+    position: absolute;
+    max-width: 50%;
+    top: 60%;
+    left: 40%;
+    background-color: white;
+    border-radius: 1em;
+    border: 3px solid yellow;
+  }
+
+  &__positions {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      color: $primary-color;
+      font-size: 2em;
+    }
+    span {
+      font-size: 1.5em;
+      padding: 1em 0;
+    }
+  }
+
+  &__description {
+    padding: 1em 0;
+    background-color: $middle-color;
+    h2 {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    img {
+      margin-right: 2em;
+    }
+  }
+
+  &__text {
+    width: 20em;
+    font-size: 1.1em;
+    padding: 0.5em;
+    border: 3px solid $text-color;
+    border-radius: 1em;
+    background-color: $background-color;
+  }
+
+  &__core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    background-color: $background-color;
+    div {
+      width: 20em;
+      font-size: 1.1em;
+      padding: 0.5em;
+      border: 3px solid $secondary-color;
+      border-radius: 1em;
+      background-color: $middle-color;
+    }
+  }
+
+  &__friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    background-color: $middle-color;
+    h3 {
+      width: 20em;
+      font-size: 1.1em;
+      padding: 0.5em;
+      border: 3px solid $text-color;
+      border-radius: 1em;
+      background-color: $background-color;
+    }
+  }
+
+  &__before-movie {
+    padding-top: 1em;
+    background-color: $background-color;
+  }
+
+  &__movie {
+    background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 1024px) {
+      height: 100vh;
+    }
+
+    iframe {
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      @media screen and (min-width: 1024px) {
+        width: 1024px;
+        height: (1024px * 0.5625);
+      }
+    }
+  }
+  &__center {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 1024px;
+      height: 576px;
+      padding-top: 576px;
+    }
   }
 }
